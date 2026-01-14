@@ -1,9 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter Eggs de Google – Accueil</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4285f4;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .intro {
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        .easter-egg-list {
+            list-style: none;
+            padding: 0;
+        }
+        .easter-egg-list li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .easter-egg-list li:hover {
+            background-color: #e0e0e0;
+        }
+        .easter-egg-list a {
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .easter-egg-list a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-    <h1>Mon site fonctionne !</h1>
+    <header>
+        <h1>Les Easter Eggs de Google</h1>
+        <p>Découvrez les secrets cachés du moteur de recherche</p>
+    </header>
+    <div class="container">
+        <div class="intro">
+            <h2>Bienvenue sur notre projet NSI : Les Easter Eggs de Google</h2>
+            <p>
+                Ce site a été créé dans le cadre d’un projet en <strong>Numérique et Sciences Informatiques (NSI)</strong> par Antoine BOURBON.
+                Google cache de nombreuses surprises et jeux secrets, appelés <em>easter eggs</em>, accessibles via des requêtes ou des actions spécifiques.
+                Explorez-les ci-dessous et amusez-vous à les tester !
+            </p>
+        </div>
+        <h3>Liste des Easter Eggs :</h3>
+        <ul class="easter-egg-list">
+            <li>
+                <a href="zerg-rush.html">Zerg Rush</a>
+                <p>Un jeu où vous devez défendre les résultats de recherche contre des "O" envahisseurs.</p>
+            </li>
+            <li>
+                <a href="atari-breakout.html">Atari Breakout</a>
+                <p>Le célèbre jeu de casse-briques, accessible via une recherche d’images.</p>
+            </li>
+            <li>
+                <a href="google-gravity.html">Google Gravity</a>
+                <p>Faites tomber tous les éléments de la page de recherche.</p>
+            </li>
+            <li>
+                <a href="pacman.html">Pac-Man</a>
+                <p>Jouez au mythique Pac-Man directement dans Google.</p>
+            </li>
+            <li>
+                <a href="solitaire.html">Solitaire</a>
+                <p>Le jeu de cartes classique, intégré à Google.</p>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p>Projet NSI – Antoine BOURBON – 2026</p>
+    </footer>
 </body>
 </html>
