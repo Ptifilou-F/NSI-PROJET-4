@@ -3,67 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easter Eggs de Google – Accueil</title>
+    <title>Easter Eggs de Google – Projet NSI</title>
     <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --background-color: #f9f9f9;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --hover-color: #e8f0fe;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
+
         header {
-            background-color: #4285f4;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-bottom: 20px;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
         }
+
         h1 {
             margin: 0;
-            font-size: 2.2em;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
+
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         .intro {
+            background-color: var(--card-color);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
             margin-bottom: 30px;
             text-align: justify;
         }
-        .easter-egg-list {
-            list-style: none;
-            padding: 0;
+
+        .intro h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
         }
-        .easter-egg-list li {
-            margin-bottom: 15px;
-            padding: 15px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+
+        .easter-egg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
-        .easter-egg-list li:hover {
-            background-color: #e0e0e0;
+
+        .easter-egg-card {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .easter-egg-list a {
-            color: #4285f4;
+
+        .easter-egg-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background-color: var(--hover-color);
+        }
+
+        .easter-egg-card a {
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 10px;
         }
-        .easter-egg-list a:hover {
-            text-decoration: underline;
+
+        .easter-egg-card p {
+            margin: 10px 0 0;
+            color: #555;
         }
+
         footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 10px;
+            margin-top: 40px;
+            padding: 20px;
             color: #666;
             font-size: 0.9em;
+            background-color: var(--card-color);
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .easter-egg-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -72,109 +117,142 @@
         <h1>Les Easter Eggs de Google</h1>
         <p>Découvrez les secrets cachés du moteur de recherche</p>
     </header>
+
     <div class="container">
         <div class="intro">
-            <h2>Bienvenue sur notre projet NSI : Les Easter Eggs de Google</h2>
+            <h2>À propos du projet</h2>
             <p>
-                Ce site a été créé dans le cadre d’un projet en <strong>Numérique et Sciences Informatiques (NSI)</strong> par Antoine et Arthur.
-                Google cache de nombreuses surprises et jeux secrets, appelés <em>easter eggs</em>, accessibles via des requêtes ou des actions spécifiques.
-                Explorez-les ci-dessous et amusez-vous à les tester !
+                Ce site est un projet réalisé dans le cadre du cours de <strong>Numérique et Sciences Informatiques (NSI)</strong> par Antoine et Arthur.
+                Google regorge de surprises et de jeux cachés, appelés <em>Easter Eggs</em>, accessibles via des requêtes ou des actions spécifiques.
+                Ces fonctionnalités secrètes sont conçues pour divertir les utilisateurs et leur offrir une expérience unique.
+            </p>
+            <p>
+                Notre objectif est de vous présenter ces Easter Eggs de manière claire et interactive.
+                Chaque lien ci-dessous vous mènera vers une page dédiée, où vous trouverez une explication détaillée et un lien direct pour tester l'Easter Egg.
+            </p>
+            <p>
+                Bonne exploration, et amusez-vous bien !
             </p>
         </div>
-        <h3>Liste des Easter Eggs :</h3>
-        <ul class="easter-egg-list">
-            <li>
-                <a href="zerg-rush.html" target="_blank">Zerg Rush</a>
-                <p>Un jeu où vous devez défendre les résultats de recherche contre des "O" envahisseurs.</p>
-            </li>
-            <li>
-                <a href="atari-breakout.html" target="_blank">Atari Breakout</a>
-                <p>Le célèbre jeu de casse-briques, accessible via une recherche d’images.</p>
-            </li>
-            <li>
+
+        <h2>Liste des Easter Eggs</h2>
+        <div class="easter-egg-grid">
+            <!-- Ligne 1 -->
+            <div class="easter-egg-card">
+                <a href="googueule.html" target="_blank">Googueule</a>
+                <p>Un site humoristique qui parodie Google avec des résultats absurdes.</p>
+            </div>
+
+            <div class="easter-egg-card">
+                <a href="google-space.html" target="_blank">Google Space</a>
+                <p>Explorez l'espace directement depuis la page de recherche.</p>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="google-gravity.html" target="_blank">Google Gravity</a>
                 <p>Faites tomber tous les éléments de la page de recherche.</p>
-            </li>
-            <li>
-                <a href="google-space.html" target="_blank">Google Space</a>
-                <p>Explorez l’espace avec Google.</p>
-            </li>
-            <li>
+            </div>
+
+            <!-- Ligne 2 -->
+            <div class="easter-egg-card">
                 <a href="do-a-barrel-roll.html" target="_blank">Do a Barrel Roll</a>
-                <p>Faites tourner la page de recherche.</p>
-            </li>
-            <li>
+                <p>Faites tourner la page de recherche comme un tonneau.</p>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="tomatina.html" target="_blank">Tomatina</a>
                 <p>Lancez des tomates sur la page de recherche.</p>
-            </li>
-            <li>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="boids.html" target="_blank">Boids</a>
                 <p>Des oiseaux qui volent en formation sur la page.</p>
-            </li>
-            <li>
+            </div>
+
+            <!-- Ligne 3 -->
+            <div class="easter-egg-card">
                 <a href="askew.html" target="_blank">Askew</a>
-                <p>Inclinez la page de recherche.</p>
-            </li>
-            <li>
+                <p>Inclinez la page de recherche pour un effet décalé.</p>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="blink.html" target="_blank">Blink</a>
                 <p>Faites clignoter le texte de la page.</p>
-            </li>
-            <li>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="67-meme.html" target="_blank">67 Meme</a>
                 <p>Un clin d'œil à un mème célèbre.</p>
-            </li>
-            <li>
+            </div>
+
+            <!-- Ligne 4 -->
+            <div class="easter-egg-card">
                 <a href="underwater.html" target="_blank">Underwater</a>
-                <p>Plongez sous l’eau avec Google.</p>
-            </li>
-            <li>
+                <p>Plongez sous l'eau avec Google.</p>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="roblox.html" target="_blank">Roblox</a>
-                <p>Un Easter Egg lié à Roblox.</p>
-            </li>
-            <li>
+                <p>Un Easter Egg inspiré de l'univers Roblox.</p>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="naruto.html" target="_blank">Naruto</a>
-                <p>Un Easter Egg inspiré de Naruto.</p>
-            </li>
-            <li>
+                <p>Un Easter Egg lié à l'univers de Naruto.</p>
+            </div>
+
+            <!-- Ligne 5 -->
+            <div class="easter-egg-card">
                 <a href="paddington.html" target="_blank">Paddington</a>
-                <p>Un Easter Egg lié à Paddington.</p>
-            </li>
-            <li>
+                <p>Un Easter Egg inspiré de Paddington.</p>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="krypto-superman.html" target="_blank">Krypto Superman</a>
-                <p>Un Easter Egg lié à Krypto, le chien de Superman.</p>
-            </li>
-            <li>
+                <p>Un Easter Egg lié au chien de Superman.</p>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="george-seurat.html" target="_blank">George Seurat</a>
                 <p>Un Easter Egg artistique inspiré de George Seurat.</p>
-            </li>
-            <li>
+            </div>
+
+            <!-- Ligne 6 -->
+            <div class="easter-egg-card">
                 <a href="dutch-angle.html" target="_blank">Dutch Angle</a>
                 <p>Inclinez la page pour un effet cinématographique.</p>
-            </li>
-            <li>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="stranger-things.html" target="_blank">Stranger Things</a>
                 <p>Un Easter Egg inspiré de la série Stranger Things.</p>
-            </li>
-            <li>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="five-nights-at-freddy.html" target="_blank">Five Nights at Freddy's</a>
-                <p>Un Easter Egg lié à Five Nights at Freddy's.</p>
-            </li>
-            <li>
+                <p>Un Easter Egg lié à l'univers de Five Nights at Freddy's.</p>
+            </div>
+
+            <!-- Ligne 7 -->
+            <div class="easter-egg-card">
                 <a href="total-eclipse.html" target="_blank">Total Eclipse 2024</a>
                 <p>Un Easter Egg lié à l'éclipse totale de 2024.</p>
-            </li>
-            <li>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="aurora-borealis.html" target="_blank">Aurora Borealis</a>
                 <p>Un Easter Egg lié aux aurores boréales.</p>
-            </li>
-            <li>
+            </div>
+
+            <div class="easter-egg-card">
                 <a href="cha-cha-slide.html" target="_blank">Cha Cha Slide</a>
                 <p>Un Easter Egg lié à la chanson Cha Cha Slide.</p>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
+
     <footer>
-        <p>Site d'Antoine et Arthur</p>
+        <p>Site réalisé par Antoine et Arthur – Projet NSI 2026</p>
     </footer>
 </body>
 </html>
