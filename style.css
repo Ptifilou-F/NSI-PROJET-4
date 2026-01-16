@@ -37,7 +37,7 @@ header p {
 }
 
 .intro {
-    background-color: white;
+    background-color: #707019 ;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -76,7 +76,7 @@ header p {
 }
 
 .easter-egg-card a {
-    color: #4285f4;
+    color: #707019 ;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.2rem;
