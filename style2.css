@@ -44,5 +44,6 @@ a:hover {
    height: auto; /* Conserve les proportions de l'image */
    margin: auto;
    border: 1px solid #000000 ; /* Bordure noire de 1px */
+   border-radius: 8px; /* Arrondi les angles avec un rayon de 8 pixels */
   
 }
