@@ -12,9 +12,9 @@ body {
     line-height: 1.6;
 }
 .return-to-top {
-    display: inline-block;
+    display: block;
     padding: 10px 20px;
-    background-color: #191970; /* Bleu foncé comme dans ton header */
+    background-color: #191970; /* Bleu foncé comme dans le header */
     color: white;
     text-align: center;
     text-decoration: none;
