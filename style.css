@@ -8,69 +8,128 @@
 
 body {
     background-color: #191970;
-    color: #333;
+    color: #e0e0e0; /* Texte clair pour un meilleur contraste */
     line-height: 1.6;
 }
 
+/* En-tête */
 header {
     background: linear-gradient(135deg, #4285f4, #34a853);
     color: white;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem;
     margin-bottom: 2rem;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Taille adaptative */
     margin-bottom: 0.5rem;
 }
 
 header p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     opacity: 0.9;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
+/* Conteneurs */
+.container,
 .container2 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    color: #e0e0e0;
+    width: 100%; /* Assure l'adaptation à la fenêtre */
 }
 
+/* Section intro */
 .intro {
-    background-color: #707019 ;
+    background-color: #707019;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 2rem;
 }
 
 .intro h2 {
     color: #4285f4;
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem); /* Taille adaptative */
 }
 
-.intro p {
+/* Tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: clamp(0.9rem, 1.8vw, 1rem); /* Taille adaptative */
+}
+
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4285f4;
     margin-bottom: 1rem;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #4285f4; /* Bordures solides */
+}
+
+th {
+    background-color: #707019;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(66, 133, 244, 0.1); /* Fond léger pour les lignes paires */
+}
+
+tr:hover {
+    background-color: rgba(66, 133, 244, 0.2); /* Effet de survol */
+}
+
+/* Liens */
+a {
+    color: #4285f4;
+    text-decoration: none;
+    transition: color 0.3s; /* Animation fluide */
+}
+
+a:hover {
+    color: #ff9900; /* Changement de couleur au survol (orange pour un contraste joyeux) */
 }
 
 /* Pied de page */
 footer {
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1.5rem;
     background-color: #333;
     color: white;
     margin-top: 2rem;
 }
 
-    header h1 {
-        font-size: 2rem;
-    }
+/* Lien "revenir en haut" */
+#haut {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
 }
 
+#haut a {
+    color: #ff9900;
+    font-weight: bold;
+}
+
+/* Responsive : adaptation pour mobiles */
+@media (max-width: 768px) {
+    .intro, table {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
