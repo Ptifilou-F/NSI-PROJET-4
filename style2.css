@@ -38,3 +38,7 @@ footer a {
 a:hover {
     color: #ff0000;
 }
+.image {
+            width: 80%; /* Prend 80% de la largeur du conteneur parent */
+            height: auto; /* Conserve les proportions de l'image */
+        }
