@@ -40,7 +40,7 @@ a:hover {
 }
 .image {
    display: block;
-   width: 80%; /* Prend 80% de la largeur du conteneur parent */
+   width: 65%; /* Prend 80% de la largeur du conteneur parent */
    height: auto; /* Conserve les proportions de l'image */
    margin: 20px auto;
 }
