@@ -42,5 +42,7 @@ a:hover {
    display: block;
    width: 65%; /* Prend 80% de la largeur du conteneur parent */
    height: auto; /* Conserve les proportions de l'image */
-   margin: 20px auto;
+   margin: auto;
+   border: 1px solid #000000; /* Bordure noire de 1px */
+   border-radius: 4px; /* Optionnel : coins légèrement arrondis pour un design plus moderne */
 }
