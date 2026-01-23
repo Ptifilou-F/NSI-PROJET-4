@@ -10,33 +10,7 @@ body {
     background-color: #191970;
     color: #e0e0e0; /* Texte clair pour un meilleur contraste */
     line-height: 1.6;
-Pour créer un bouton ou un lien qui permet de remonter en haut de la page de manière lente et fluide, tu peux utiliser du CSS et du JavaScript. Voici comment faire, avec un design stylé et incroyable comme tu l'aimes :
-
-1. Ajoute un bouton ou un lien en HTML :
-Place ce bouton ou lien à l'endroit où tu veux qu'il apparaisse (par exemple, en bas de la page) :
-html
-Copier
-
-<a href="#top" class="return-to-top">Retour en haut</a>
-
-
-href="#top" : Ce lien pointe vers un élément avec l'identifiant top. Tu peux ajouter cet identifiant à la balise <body> ou à une <div> en haut de ta page.
-
-2. Ajoute un identifiant en haut de la page :
-Ajoute un identifiant top à la balise <body> ou à une <div> en haut de ta page :
-html
-Copier
-
-<body id="top">
-    <!-- Ton contenu ici -->
-</body>
-
-
-3. Style le bouton avec du CSS :
-Pour un design stylé et incroyable, tu peux personnaliser ton bouton comme ceci :
-css
-Copier
-
+}
 .return-to-top {
     display: inline-block;
     padding: 10px 20px;
