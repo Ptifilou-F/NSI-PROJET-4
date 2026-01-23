@@ -11,6 +11,12 @@ body {
     color: #e0e0e0; /* Texte clair pour un meilleur contraste */
     line-height: 1.6;
 }
+img {
+    width: 100%; /* L’image prend 100% de la largeur de son conteneur */
+    height: auto; /* La hauteur s’adapte pour conserver les proportions */
+    display: block; /* Pour éviter les espaces indésirables sous l’image */
+    margin: 0 auto; /* Centre l’image horizontalement */
+}
 
 /* En-tête */
 header {
@@ -136,4 +142,5 @@ footer {
     th, td {
         padding: 8px;
     }
+    
 }
