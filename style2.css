@@ -32,4 +32,6 @@ footer {
     margin-top: 20px;
     color: #ffffff;
 }
-
+footer a {
+    color: white;
+}
