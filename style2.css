@@ -43,6 +43,6 @@ a:hover {
    width: 65%; /* Prend 80% de la largeur du conteneur parent */
    height: auto; /* Conserve les proportions de l'image */
    margin: auto;
-   border: 3px solid #ff0000 !important; /* Bordure noire de 1px */
-   background-color: white;
+   border: 1px solid #000000 ; /* Bordure noire de 1px */
+  
 }
