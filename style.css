@@ -126,7 +126,7 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: rgba(191,177,157,0.2); /* Fond léger pour les lignes paires */
+    background-color: rgba(191,176,156,0.2); /* Fond léger pour les lignes paires */
 }
 
 tr:hover {
