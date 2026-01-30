@@ -26,39 +26,38 @@ body {
     background-color: #004225; /* Vert foncé comme ton fond de body */
 }
 
-.logo-google {
-  display: inline-block;
-  position: relative;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  margin: 10px;
-}
-
 header {
-    display: flex;           /* met le logo et le texte sur une ligne */
-    align-items: center;     /* aligne verticalement */
-    gap: 1rem;               /* espace entre logo et texte */
-    padding: 1rem;
+    display: flex;               /* logo et texte sur la même ligne */
+    align-items: center;         /* centre verticalement le texte avec le logo */
+    justify-content: center;     /* centre le texte horizontalement dans l’espace restant */
+    gap: 1rem;                   /* espace entre le logo et le texte */
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
 }
 
-header .logo-google img {
-    height: 10px;            /* ajuste la taille du logo */
+.logo-google {
+    flex-shrink: 0;              /* empêche le logo de se rétrécir */
+}
+
+.logo-google img {
+    height: 60px;                /* taille correcte du logo */
     width: auto;
 }
 
-header .header-text {
-    display: flex;
-    flex-direction: column;
+.header-text {
+    text-align: center;          /* texte centré */
 }
 
-/* En-tête */
-header {
-    background: linear-gradient(135deg, #4285f4, #34a853);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-bottom: 2rem;
+.header-text h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.header-text p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    opacity: 0.9;
+    margin: 0;
 }
 
 header h1 {
