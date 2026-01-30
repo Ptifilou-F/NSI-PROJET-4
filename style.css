@@ -79,6 +79,7 @@ header p {
     margin: 0 auto;
     padding: 0 1rem;
     width: 100%; /* Assure l'adaptation à la fenêtre */
+    background-color: #bfb19d;
 }
 
 /* Section intro */
