@@ -26,6 +26,33 @@ body {
     background-color: #004225; /* Vert foncé comme ton fond de body */
 }
 
+.bouton-easter-egg {
+  display: inline-block;
+  position: relative;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.bouton google img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Forme ronde pour un style "Easter Egg" */
+  transition: transform 0.3s;
+}
+
+.bouton google:hover img {
+  transform: scale(1.1);
+}
+
+.bouton google span {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #4285f4; /* Bleu Google */
+  font-weight: bold;
+}
 
 
 /* En-tête */
