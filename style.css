@@ -67,7 +67,7 @@ header p {
 }
 
 .intro h2 {
-    color: #4285f4;
+    color: #2a6cb4;
     margin-bottom: 1rem;
     font-size: clamp(1.4rem, 3vw, 1.8rem); /* Taille adaptative */
 }
