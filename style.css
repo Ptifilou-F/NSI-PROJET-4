@@ -35,25 +35,22 @@ body {
   margin: 10px;
 }
 
-.bouton google img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%; /* Forme ronde pour un style "Easter Egg" */
-  transition: transform 0.3s;
+header {
+    display: flex;           /* met le logo et le texte sur une ligne */
+    align-items: center;     /* aligne verticalement */
+    gap: 1rem;               /* espace entre logo et texte */
+    padding: 1rem;
 }
 
-.bouton google:hover img {
-  transform: scale(1.1);
+header .logo-google img {
+    height: 60px;            /* ajuste la taille du logo */
+    width: auto;
 }
 
-.bouton google span {
-  display: block;
-  text-align: center;
-  margin-top: 10px;
-  color: #4285f4; /* Bleu Google */
-  font-weight: bold;
+header .header-text {
+    display: flex;
+    flex-direction: column;
 }
-
 
 /* En-tête */
 header {
