@@ -32,7 +32,7 @@ header {
     justify-content: center;     /* centre le texte horizontalement dans l’espace restant */
     gap: 1rem;                   /* espace entre le logo et le texte */
     padding: 1rem 2rem;
-    background-color: #bfb19d;
+    background-color: #228B22;
     color: white;
 }
 
