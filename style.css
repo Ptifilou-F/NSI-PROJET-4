@@ -52,12 +52,14 @@ header {
 .header-text h1 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .header-text p {
     font-size: clamp(1rem, 2vw, 1.1rem);
     opacity: 0.9;
     margin: 0;
+    text-align: center;
 }
 
 header h1 {
