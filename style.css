@@ -43,7 +43,7 @@ header {
 }
 
 header .logo-google img {
-    height: 60px;            /* ajuste la taille du logo */
+    height: 10px;            /* ajuste la taille du logo */
     width: auto;
 }
 
