@@ -1,157 +1,101 @@
-/* Réinitialisation et base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Couleurs principales */
+:root {
+  --bleu-google: #4285f4;
+  --bleu-google-fonce: #2a6cb4;
+  --bleu-google-survol: #1a73e8;
+  --fond-conteneur: #f8f9fa;
+  --bordure-conteneur: #dee2e6;
+  --texte-principal: #212529;
+  --texte-secondaire: #6c757d;
+  --fond-site: #ffffff;
 }
 
+/* Arrière-plan général */
 body {
-    background-color: #191970;
-    color: #e0e0e0; /* Texte clair pour un meilleur contraste */
-    line-height: 1.6;
-}
-.return-to-top {
-    display: block;
-    padding: 10px 20px;
-    background-color: #191970; /* Bleu foncé comme dans le header */
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: 'Arial', sans-serif;
-    transition: background-color 0.3s ease; /* Effet de transition fluide */
-}
-
-.return-to-top:hover {
-    background-color: #004225; /* Vert foncé comme ton fond de body */
-}
-
-
-
-/* En-tête */
-header {
-    background: linear-gradient(135deg, #4285f4, #34a853);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-header h1 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Taille adaptative */
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    opacity: 0.9;
+  background-color: var(--fond-site);
+  color: var(--texte-principal);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 /* Conteneurs */
-.container,
-.container2 {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    width: 100%; /* Assure l'adaptation à la fenêtre */
+.conteneur {
+  background-color: var(--fond-conteneur);
+  border: 1px solid var(--bordure-conteneur);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Section intro */
-.intro {
-    background-color: #707019;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-}
-
-.intro h2 {
-    color: #2a6cb4;
-    margin-bottom: 1rem;
-    font-size: clamp(1.4rem, 3vw, 1.8rem); /* Taille adaptative */
-}
-
-/* Tableau */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: clamp(0.9rem, 1.8vw, 1rem); /* Taille adaptative */
-}
-
-caption {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #4285f4;
-    margin-bottom: 1rem;
-    text-align: left;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #4285f4; /* Bordures solides */
-}
-
-th {
-    background-color: #707019;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: rgba(66, 133, 244, 0.1); /* Fond léger pour les lignes paires */
-}
-
-tr:hover {
-    background-color: rgba(66, 133, 244, 0.2); /* Effet de survol */
+/* Titres */
+h1, h2, h3 {
+  color: var(--texte-principal);
 }
 
 /* Liens */
 a {
-    color: #4285f4;
-    text-decoration: none;
-    transition: color 0.3s; /* Animation fluide */
+  color: var(--bleu-google);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 a:hover {
-    color: #ff9900; /* Changement de couleur au survol (orange pour un contraste joyeux) */
+  color: var(--bleu-google-survol);
+  text-decoration: underline;
+}
+
+/* Boutons */
+.bouton {
+  background-color: var(--bleu-google);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.bouton:hover {
+  background-color: var(--bleu-google-survol);
+}
+
+/* En-têtes et pieds de page */
+header, footer {
+  background-color: var(--fond-conteneur);
+  border-bottom: 1px solid var(--bordure-conteneur);
+  padding: 15px 0;
+}
+
+/* Navigation */
+nav {
+  background-color: var(--fond-conteneur);
+}
+
+nav a {
+  margin: 0 10px;
+}
+
+/* Liste des Easter Eggs */
+.liste-easter-eggs {
+  list-style: none;
+  padding: 0;
+}
+
+.liste-easter-eggs li {
+  background-color: white;
+  border: 1px solid var(--bordure-conteneur);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px 0;
 }
 
 /* Pied de page */
 footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #333;
-    color: white;
-    margin-top: 2rem;
-}
-
-/* Lien "revenir en haut" */
-#haut {
-    display: block;
-    text-align: center;
-    margin: 1rem 0;
-}
-
-#haut a {
-    color: #ff9900;
-    font-weight: bold;
-}
-
-#haut retour {
-    text-align: center;
-}
-
-/* Responsive : adaptation pour mobiles */
-@media (max-width: 768px) {
-    .intro, table {
-        width: 100%;
-        padding: 0.8rem;
-    }
-
-    th, td {
-        padding: 8px;
-    }
-    
+  text-align: center;
+  color: var(--texte-secondaire);
+  font-size: 0.9em;
 }
