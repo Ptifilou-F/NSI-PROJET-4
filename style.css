@@ -103,7 +103,7 @@ table {
     border-collapse: collapse;
     margin: 1rem 0;
     font-size: clamp(0.9rem, 1.8vw, 1rem); /* Taille adaptative */
-    background-color: #bfb19d;
+    background-color: #dcd0c0;
 }
 
 caption {
