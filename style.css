@@ -1,19 +1,7 @@
-/* Couleurs principales */
-:root {
-  --bleu-google: #4285f4;
-  --bleu-google-fonce: #2a6cb4;
-  --bleu-google-survol: #1a73e8;
-  --fond-conteneur: #f8f9fa;
-  --bordure-conteneur: #dee2e6;
-  --texte-principal: #212529;
-  --texte-secondaire: #6c757d;
-  --fond-site: #ffffff;
-}
-
 /* Arrière-plan général */
 body {
-  background-color: var(--fond-site);
-  color: var(--texte-principal);
+  background-color: #ffffff;
+  color: #212529;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -21,81 +9,80 @@ body {
 }
 
 /* Conteneurs */
-.conteneur {
-  background-color: var(--fond-conteneur);
-  border: 1px solid var(--bordure-conteneur);
+.container, .container2 {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
   border-radius: 8px;
   padding: 20px;
-  margin: 15px 0;
+  margin: 15px auto;
+  max-width: 900px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Titres */
-h1, h2, h3 {
-  color: var(--texte-principal);
+h1, h2 {
+  color: #212529;
 }
 
 /* Liens */
 a {
-  color: var(--bleu-google);
+  color: #4285f4;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--bleu-google-survol);
+  color: #1a73e8;
   text-decoration: underline;
 }
 
-/* Boutons */
-.bouton {
-  background-color: var(--bleu-google);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 15px;
-  cursor: pointer;
+/* Tableau */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  margin: 15px 0;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+th {
+  background-color: #f8f9fa;
   font-weight: bold;
-  transition: background-color 0.2s;
 }
 
-.bouton:hover {
-  background-color: var(--bleu-google-survol);
+tr:hover {
+  background-color: rgba(66, 133, 244, 0.05);
 }
 
-/* En-têtes et pieds de page */
-header, footer {
-  background-color: var(--fond-conteneur);
-  border-bottom: 1px solid var(--bordure-conteneur);
-  padding: 15px 0;
-}
-
-/* Navigation */
-nav {
-  background-color: var(--fond-conteneur);
-}
-
-nav a {
-  margin: 0 10px;
-}
-
-/* Liste des Easter Eggs */
-.liste-easter-eggs {
-  list-style: none;
-  padding: 0;
-}
-
-.liste-easter-eggs li {
-  background-color: white;
-  border: 1px solid var(--bordure-conteneur);
-  border-radius: 4px;
-  padding: 10px;
-  margin: 5px 0;
+/* En-tête */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  padding: 20px 0;
+  text-align: center;
 }
 
 /* Pied de page */
 footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  padding: 15px 0;
   text-align: center;
-  color: var(--texte-secondaire);
-  font-size: 0.9em;
+  color: #6c757d;
+}
+
+/* Lien "retour en haut" */
+.return-to-top {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.return-to-top a {
+  font-weight: bold;
+  color: #4285f4;
 }
