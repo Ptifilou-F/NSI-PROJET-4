@@ -188,3 +188,34 @@ footer {
     }
     
 }
+/* Bouton "Retour en haut" */
+.return-to-top-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4285f4; /* Bleu Google */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.return-to-top-btn:hover {
+    background-color: #3367d6; /* Bleu plus foncé au survol */
+    transform: translateY(-2px); /* Effet de légère élévation */
+}
+
+/* Cache le bouton au début (il apparaîtra après le scroll) */
+.return-to-top-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.return-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
