@@ -3,11 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const logo = document.querySelector('.logo-google img');
     if (logo) {
         logo.addEventListener('mouseover', function() {
-            // Réinitialise la rotation
             this.style.transform = 'rotate(0deg)';
-            // Force le navigateur à réappliquer la transition
             void this.offsetWidth;
-            // Lance la rotation
             this.style.transform = 'rotate(360deg)';
             this.style.transition = 'transform 1s';
         });
@@ -15,36 +12,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 2. Effet de fondu pour les sections ".intro"
     const intros = document.querySelectorAll('.intro');
-    // Initialise l'opacité à 0 pour toutes les sections .intro
+    let lastScrollPosition = 0; // Variable pour suivre la position du défilement
+
+    // Initialise l'opacité à 0.3 pour toutes les sections .intro
     intros.forEach(intro => {
-        intro.style.opacity = '0';
+        intro.style.opacity = '0.3';
     });
 
-    // Écoute l'événement de défilement
     window.addEventListener('scroll', function() {
+        const currentScrollPosition = window.pageYOffset;
+
         intros.forEach(intro => {
             const introPosition = intro.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-            // Si la section est visible à l'écran, la rendre opaque
-            if (introPosition < windowHeight - 100) { // -100 pour déclencher un peu avant
+
+            // Si la section est visible à l'écran, la rendre complètement opaque
+            if (introPosition < windowHeight - 100) {
                 intro.style.opacity = '1';
             }
+            // Si on ne descend plus (remonte), ne pas modifier l'opacité
+            else if (currentScrollPosition < lastScrollPosition) {
+                // Ne rien faire, garder l'opacité actuelle
+            }
         });
-    });
 
-    // 3. Bouton "Retour en haut"
-    const returnToTopButton = document.getElementById('return-to-top');
-    if (returnToTopButton) {
-        // Écoute l'événement de défilement pour afficher/masquer le bouton
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 200) {
+        // Met à jour la dernière position de défilement
+        lastScrollPosition = currentScrollPosition;
+
+        // 3. Bouton "Retour en haut" avec fondu
+        const returnToTopButton = document.getElementById('return-to-top');
+        if (returnToTopButton) {
+            if (currentScrollPosition > 200) {
                 returnToTopButton.classList.add('visible');
             } else {
                 returnToTopButton.classList.remove('visible');
             }
-        });
+        }
+    });
 
-        // Écoute l'événement de clic pour remonter en haut
+    // 4. Gestion du clic sur le bouton "Retour en haut"
+    const returnToTopButton = document.getElementById('return-to-top');
+    if (returnToTopButton) {
         returnToTopButton.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
