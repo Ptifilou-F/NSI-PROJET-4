@@ -1,15 +1,19 @@
 // Attend que le DOM soit entièrement chargé avant d'exécuter le script
 document.addEventListener('DOMContentLoaded', function() {
 
-    // 1. Animation du logo Google au survol de la souris
-    const logo = document.querySelector('.logo-google img');
-    if (logo) {
-        logo.addEventListener('mouseover', function() {
-            // Fait tourner le logo de 360 degrés en 1 seconde
-            this.style.transform = 'rotate(360deg)';
-            this.style.transition = 'transform 1s';
-        });
-    }
+    // Animation du logo Google au survol (rotation à chaque survol)
+const logo = document.querySelector('.logo-google img');
+if (logo) {
+    logo.addEventListener('mouseover', function() {
+        // Réinitialise la transformation avant de relancer l'animation
+        this.style.transform = 'rotate(0deg)';
+        // Force le navigateur à réappliquer la transition
+        void this.offsetWidth;
+        // Lance la rotation
+        this.style.transform = 'rotate(360deg)';
+        this.style.transition = 'transform 1s';
+    });
+}
 
     // 2. Effet de fondu pour les sections ".intro" lors du défilement
     const intros = document.querySelectorAll('.intro');
