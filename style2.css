@@ -52,3 +52,12 @@ a:hover {
    border-radius: 8px; /* Arrondi les angles avec un rayon de 8 pixels */
   
 }
+.parallax {
+    background-image: url('ton-image-de-fond.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
