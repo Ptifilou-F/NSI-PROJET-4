@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (logo) {
         logo.addEventListener('mouseover', function() {
             this.style.transform = 'rotate(0deg)';
-            void this.offsetWidth;
+            void this.offsetWidth; // Force le redémarrage de l'animation
             this.style.transform = 'rotate(36000deg)';
             this.style.transition = 'transform 1000s';
         });
     }
+
+    // 2. Effet de fondu gris sur toute la page
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
     overlay.style.top = '0';
@@ -31,12 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollPercentage = (currentScrollPosition / (documentHeight - windowHeight)) * 100;
 
         // Applique un fondu gris progressif (max 70% d'opacité pour garder la lisibilité)
-        const overlayOpacity = scrollPercentage / 150; // Ajuste le dénominateur pour contrôler l'intensité
-        overlay.style.opacity = Math.min(overlayOpacity, 0.7); // Ne dépasse pas 70% d'opacité
+        const overlayOpacity = scrollPercentage / 150;
+        overlay.style.opacity = Math.min(overlayOpacity, 0.7);
 
         lastScrollPosition = currentScrollPosition;
-    });
-});
 
         // 3. Bouton "Retour en haut" avec fondu
         const returnToTopButton = document.getElementById('return-to-top');
@@ -58,6 +58,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         });
-   
     }
 });
