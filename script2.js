@@ -15,7 +15,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+        // Fonction pour mettre à jour et afficher le nombre de vues
+    function updateViewCount() {
+        // Récupère le nombre de vues depuis le localStorage
+        let viewCount = localStorage.getItem('pageViewCount');
+    
+        // Si c'est la première visite, initialise le compteur à 0
+        if (viewCount === null) {
+            viewCount = 0;
+        }
+    
+        // Incrémente le compteur
+        viewCount = parseInt(viewCount) + 1;
+    
+        // Sauvegarde le nouveau compteur dans le localStorage
+        localStorage.setItem('pageViewCount', viewCount);
+    
+        // Affiche le compteur sur la page
+        document.getElementById('view-count').textContent = viewCount;
+    }
+    
+    // Appelle la fonction quand la page est chargée
+    document.addEventListener('DOMContentLoaded', updateViewCount);
+    
 
+
+
+
+    
     /* =========================
        2. Fade sections
     ========================= */
