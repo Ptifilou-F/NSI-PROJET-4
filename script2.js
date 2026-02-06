@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.appendChild(msg);
 
-        setTimeout(() => msg.remove(), 2000);
+        setTimeout(() => msg.remove(), 3000);
     }
 
 });
