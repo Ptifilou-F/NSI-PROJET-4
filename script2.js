@@ -16,44 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-   // 2. Effet de fondu gris sur toute la page
-    const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'rgba(128, 128, 128, 0)';
-    overlay.style.pointerEvents = 'none';
-    overlay.style.zIndex = '1000';
-    overlay.style.opacity = '0';
-    overlay.style.transition = 'opacity 0.5s ease';
-    document.body.prepend(overlay);
-
-    let lastScrollPosition = 0;
-
-    window.addEventListener('scroll', function() {
-        const currentScrollPosition = window.pageYOffset;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const scrollPercentage = (currentScrollPosition / (documentHeight - windowHeight)) * 100;
-
-        // Applique un fondu gris progressif (max 70% d'opacité pour garder la lisibilité)
-        const overlayOpacity = scrollPercentage / 150;
-        overlay.style.opacity = Math.min(overlayOpacity, 0.7);
-
-        lastScrollPosition = currentScrollPosition;
-
-        // 3. Bouton "Retour en haut" avec fondu
-        const returnToTopButton = document.getElementById('return-to-top');
-        if (returnToTopButton) {
-            if (currentScrollPosition > 200) {
-                returnToTopButton.classList.add('visible');
-            } else {
-                returnToTopButton.classList.remove('visible');
-            }
-        }
-    });
+   
 
         /* =========================
            3. Bouton retour haut
@@ -78,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-
 
 
     /* =========================
