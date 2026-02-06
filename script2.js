@@ -15,31 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-         /* =========================
-           2. Compteur de vues
-        ========================= */
-        function updateViewCount() {
-            let viewCount = localStorage.getItem('pageViewCount');
-    
-            if (viewCount === null) {
-                viewCount = 205346;
-            }
-    
-            viewCount = parseInt(viewCount) + 1;
-            localStorage.setItem('pageViewCount', viewCount);
-    
-            // Affiche le compteur dans l'élément HTML
-            const viewCountElement = document.getElementById('view-count');
-            if (viewCountElement) {
-                viewCountElement.textContent = viewCount;
-            } else {
-                console.error("L'élément avec l'ID 'view-count' n'existe pas dans le HTML.");
-            }
-        }
-    
-        // Appelle la fonction pour mettre à jour le compteur
-        updateViewCount();
-
+        
 
     
     /* =========================
