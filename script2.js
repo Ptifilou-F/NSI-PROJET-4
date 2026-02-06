@@ -16,28 +16,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    /* =========================
-       2. Fade sections
+   /* =========================
+   2. Fade sur toute la page
     ========================= */
-    const intros = document.querySelectorAll('.intro');
-    let lastScrollPosition = 0;
-
-    intros.forEach(intro => intro.style.opacity = '0.3');
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(128, 128, 128, 0)'; // Gris transparent
+    overlay.style.pointerEvents = 'none'; // Permet de cliquer à travers
+    overlay.style.zIndex = '1000';
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.5s ease';
+    document.body.prepend(overlay);
 
     window.addEventListener('scroll', function() {
-
         const currentScrollPosition = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (currentScrollPosition / (documentHeight - windowHeight)) * 100;
 
-        intros.forEach(intro => {
-            const introPosition = intro.getBoundingClientRect().top;
-
-            if (introPosition < window.innerHeight - 100) {
-                intro.style.opacity = '1';
-            }
-        });
-
-        lastScrollPosition = currentScrollPosition;
-
+        // Applique un fondu gris progressif (max 70% d'opacité)
+        const overlayOpacity = scrollPercentage / 150;
+        overlay.style.opacity = Math.min(overlayOpacity, 0.7);
+    });
 
         /* =========================
            3. Bouton retour haut
