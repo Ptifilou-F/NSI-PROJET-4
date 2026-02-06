@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /* =========================
-       5. 🎮 KONAMI CODE (SAFE)
+       5. KONAMI CODE
     ========================= */
 
     const sequence = [
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function runEasterEgg() {
 
-        console.log("🥚 Easter Egg activé !");
+        console.log("Easter Egg activé !");
 
         // effet visuel léger (safe)
         document.body.style.transition = "filter 2s";
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // message discret
         const msg = document.createElement("div");
-        msg.textContent = "🥚 Easter Egg trouvé !";
+        msg.textContent = "Easter Egg trouvé !";
         msg.style.position = "fixed";
         msg.style.bottom = "20px";
         msg.style.right = "20px";
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.appendChild(msg);
 
-        setTimeout(() => msg.remove(), 2000);
+        setTimeout(() => msg.remove(), 20000);
     }
 
 });
