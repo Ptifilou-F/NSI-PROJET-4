@@ -9,35 +9,34 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transition = 'transform 1000s';
         });
     }
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(128, 128, 128, 0)';
+    overlay.style.pointerEvents = 'none';
+    overlay.style.zIndex = '1000';
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.5s ease';
+    document.body.prepend(overlay);
 
-    // 2. Effet de fondu pour les sections ".intro"
-    const intros = document.querySelectorAll('.intro');
-    let lastScrollPosition = 0; // Variable pour suivre la position du défilement
-
-    // Initialise l'opacité à 0.3 pour toutes les sections .intro
-    intros.forEach(intro => {
-        intro.style.opacity = '0.3';
-    });
+    let lastScrollPosition = 0;
 
     window.addEventListener('scroll', function() {
         const currentScrollPosition = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (currentScrollPosition / (documentHeight - windowHeight)) * 100;
 
-        intros.forEach(intro => {
-            const introPosition = intro.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
+        // Applique un fondu gris progressif (max 70% d'opacité pour garder la lisibilité)
+        const overlayOpacity = scrollPercentage / 150; // Ajuste le dénominateur pour contrôler l'intensité
+        overlay.style.opacity = Math.min(overlayOpacity, 0.7); // Ne dépasse pas 70% d'opacité
 
-            // Si la section est visible à l'écran, la rendre complètement opaque
-            if (introPosition < windowHeight - 100) {
-                intro.style.opacity = '1';
-            }
-            // Si on ne descend plus (remonte), ne pas modifier l'opacité
-            else if (currentScrollPosition < lastScrollPosition) {
-                // Ne rien faire, garder l'opacité actuelle
-            }
-        });
-
-        // Met à jour la dernière position de défilement
         lastScrollPosition = currentScrollPosition;
+    });
+});
 
         // 3. Bouton "Retour en haut" avec fondu
         const returnToTopButton = document.getElementById('return-to-top');
