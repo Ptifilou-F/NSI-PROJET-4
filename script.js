@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         logo.addEventListener('mouseover', function() {
             this.style.transform = 'rotate(0deg)';
             void this.offsetWidth; // Force le redémarrage de l'animation
-            this.style.transform = 'rotate(36000deg)';
+            this.style.transform = 'rotate(3600deg)';
             this.style.transition = 'transform 1000s';
         });
     }
