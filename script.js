@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         logo.addEventListener('mouseover', function() {
             this.style.transform = 'rotate(0deg)';
             void this.offsetWidth;
-            this.style.transform = 'rotate(360000000deg)';
-            this.style.transition = 'transform 100s';
+            this.style.transform = 'rotate(36000deg)';
+            this.style.transition = 'transform 1000s';
         });
     }
 
