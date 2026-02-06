@@ -16,7 +16,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-   
+    /* =========================
+       2. Fade sections
+    ========================= */
+    const intros = document.querySelectorAll('.intro');
+    let lastScrollPosition = 0;
+
+    intros.forEach(intro => intro.style.opacity = '0.3');
+
+    window.addEventListener('scroll', function() {
+
+        const currentScrollPosition = window.pageYOffset;
+
+        intros.forEach(intro => {
+            const introPosition = intro.getBoundingClientRect().top;
+
+            if (introPosition < window.innerHeight - 100) {
+                intro.style.opacity = '1';
+            }
+        });
+
+        lastScrollPosition = currentScrollPosition;
+
 
         /* =========================
            3. Bouton retour haut
@@ -41,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
 
 
     /* =========================
