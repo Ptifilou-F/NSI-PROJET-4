@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let viewCount = localStorage.getItem('pageViewCount');
     
             if (viewCount === null) {
-                viewCount = 0;
+                viewCount = 205346;
             }
     
             viewCount = parseInt(viewCount) + 1;
