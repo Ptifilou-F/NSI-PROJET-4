@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         setTimeout(() => {
             document.body.style.filter = "none";
-        }, 600);
+        }, 2000);
 
         // message discret
         const msg = document.createElement("div");
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.appendChild(msg);
 
-        setTimeout(() => msg.remove(), 20000);
+        setTimeout(() => msg.remove(), 2000);
     }
 
 });
