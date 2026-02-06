@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("🥚 Easter Egg activé !");
 
         // effet visuel léger (safe)
-        document.body.style.transition = "filter 0.4s";
+        document.body.style.transition = "filter 2s";
         document.body.style.filter = "hue-rotate(120deg)";
 
         setTimeout(() => {
