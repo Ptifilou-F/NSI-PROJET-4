@@ -15,31 +15,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-        // Fonction pour mettre à jour et afficher le nombre de vues
-    function updateViewCount() {
-        // Récupère le nombre de vues depuis le localStorage
-        let viewCount = localStorage.getItem('pageViewCount');
+         /* =========================
+           2. Compteur de vues
+        ========================= */
+        function updateViewCount() {
+            let viewCount = localStorage.getItem('pageViewCount');
     
-        // Si c'est la première visite, initialise le compteur à 0
-        if (viewCount === null) {
-            viewCount = 0;
+            if (viewCount === null) {
+                viewCount = 0;
+            }
+    
+            viewCount = parseInt(viewCount) + 1;
+            localStorage.setItem('pageViewCount', viewCount);
+    
+            // Affiche le compteur dans l'élément HTML
+            const viewCountElement = document.getElementById('view-count');
+            if (viewCountElement) {
+                viewCountElement.textContent = viewCount;
+            } else {
+                console.error("L'élément avec l'ID 'view-count' n'existe pas dans le HTML.");
+            }
         }
     
-        // Incrémente le compteur
-        viewCount = parseInt(viewCount) + 1;
-    
-        // Sauvegarde le nouveau compteur dans le localStorage
-        localStorage.setItem('pageViewCount', viewCount);
-    
-        // Affiche le compteur sur la page
-        document.getElementById('view-count').textContent = viewCount;
-    }
-    
-    // Appelle la fonction quand la page est chargée
-    document.addEventListener('DOMContentLoaded', updateViewCount);
-    
-
-
+        // Appelle la fonction pour mettre à jour le compteur
+        updateViewCount();
 
 
     
