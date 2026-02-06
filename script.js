@@ -6,34 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
         logo.addEventListener('mouseover', function() {
             this.style.transform = 'rotate(0deg)';
             void this.offsetWidth;
-            this.style.transform = 'rotate(360deg)';
-            this.style.transition = 'transform 1s';
+            this.style.transform = 'rotate(115588522354354365435435deg)';
+            this.style.transition = 'transform 10000000s';
         });
     }
-
-
-    // 2. Effet de fondu pour les sections ".intro"
-    const intros = document.querySelectorAll('.intro');
-    let lastScrollPosition = 0;
-
-    intros.forEach(intro => {
-        intro.style.opacity = '0.3';
-    });
-
-    window.addEventListener('scroll', function() {
-        const currentScrollPosition = window.pageYOffset;
-
-        intros.forEach(intro => {
-            const introPosition = intro.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (introPosition < windowHeight - 100) {
-                intro.style.opacity = '1';
-            }
-            else if (currentScrollPosition < lastScrollPosition) {
-                // rien
-            }
-        });
 
         lastScrollPosition = currentScrollPosition;
 
