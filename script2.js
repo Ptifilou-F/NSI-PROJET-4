@@ -127,24 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    /* =========================
-       6. COMPTEUR DE VUES GLOBAL
-    ========================= */
 
-    const counterElement = document.getElementById("view-counter");
-
-    if (counterElement) {
-        fetch("https://api.countapi.xyz/hit/nsiprojet4/views")
-            .then(res => res.json())
-            .then(data => {
-                counterElement.textContent = "Vues du site : " + data.value;
-            })
-            .catch(() => {
-                counterElement.textContent = "Compteur indisponible";
-            });
-    }
-
-});
 document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour l'effet "typewriter"
     function typeWriter(element, text, speed = 50) {
