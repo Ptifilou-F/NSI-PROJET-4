@@ -15,11 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+        
 
+    
     /* =========================
        2. Fade sections
     ========================= */
     const intros = document.querySelectorAll('.intro');
+    let lastScrollPosition = 0;
 
     intros.forEach(intro => intro.style.opacity = '0.3');
 
@@ -34,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 intro.style.opacity = '1';
             }
         });
+
+        lastScrollPosition = currentScrollPosition;
+
 
         /* =========================
            3. Bouton retour haut
@@ -60,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+
     /* =========================
        5. KONAMI CODE
     ========================= */
@@ -78,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let key = event.key;
 
+        // sécurise lettres majuscules/minuscules
         if (key.length === 1) key = key.toLowerCase();
 
         if (key === sequence[index]) {
@@ -97,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log("Easter Egg activé !");
 
+        // effet visuel léger (safe)
         document.body.style.transition = "filter 2s";
         document.body.style.filter = "hue-rotate(120deg)";
 
@@ -104,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.filter = "none";
         }, 2000);
 
+        // message discret
         const msg = document.createElement("div");
         msg.textContent = "Easter Egg trouvé !";
         msg.style.position = "fixed";
@@ -119,32 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         setTimeout(() => msg.remove(), 3000);
     }
-
-
-    /* =========================
-       6. TYPEWRITER (réparé)
-    ========================= */
-
-    function typeWriter(element, text, speed = 30) {
-        let i = 0;
-        element.textContent = '';
-
-        const timer = setInterval(() => {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-            } else {
-                clearInterval(timer);
-            }
-        }, speed);
-    }
-
-    const titles = document.querySelectorAll('h1, h2, caption');
-
-    titles.forEach(title => {
-        const text = title.textContent;
-        typeWriter(title, text,30);
-    });
 
 });
 
