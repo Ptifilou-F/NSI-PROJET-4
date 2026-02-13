@@ -166,6 +166,4 @@ document.addEventListener('DOMContentLoaded', function() {
         const text = title.textContent;
         typeWriter(title, text, 30); // 30ms par caractère pour un effet fluide
     });
-
-    // (Le reste de ton code existant, comme le Konami Code, le bouton "Retour en haut", etc.)
 });
