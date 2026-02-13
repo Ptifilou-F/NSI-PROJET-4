@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
        2. Fade sections
     ========================= */
     const intros = document.querySelectorAll('.intro');
-    let lastScrollPosition = 0;
 
     intros.forEach(intro => intro.style.opacity = '0.3');
 
@@ -35,9 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 intro.style.opacity = '1';
             }
         });
-
-        lastScrollPosition = currentScrollPosition;
-
 
         /* =========================
            3. Bouton retour haut
@@ -62,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-
 
 
     /* =========================
@@ -126,13 +121,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+    /* =========================
+       6. TYPEWRITER (réparé)
+    ========================= */
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Fonction pour l'effet "typewriter"
-    function typeWriter(element, text, speed = 50) {
+    function typeWriter(element, text, speed = 30) {
         let i = 0;
-        element.textContent = ''; // Vide le contenu initial
+        element.textContent = '';
+
         const timer = setInterval(() => {
             if (i < text.length) {
                 element.textContent += text.charAt(i);
@@ -143,10 +139,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }, speed);
     }
 
-    // Applique l'effet à tous les h1 et h2 de la page
     const titles = document.querySelectorAll('h1, h2, caption');
+
     titles.forEach(title => {
         const text = title.textContent;
-        typeWriter(title, text, 30); // 30ms par caractère pour un effet fluide
+        typeWriter(title, text);
     });
+
 });
+
