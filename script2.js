@@ -131,4 +131,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Fonction pour l'effet "typewriter"
+    function typeWriter(element, text, speed = 50) {
+        let i = 0;
+        element.textContent = ''; // Vide le contenu initial
+        const timer = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(timer);
+            }
+        }, speed);
+    }
+
+    // Applique l'effet à tous les h1 et h2 de la page
+    const titles = document.querySelectorAll('h1, h2, caption');
+    titles.forEach(title => {
+        const text = title.textContent;
+        typeWriter(title, text, 30); // 30ms par caractère pour un effet fluide
+    });
+});
 
