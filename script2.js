@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Applique l'effet à tous les h1 et h2 de la page
-    const titles = document.querySelectorAll('h1, h2');
+    const titles = document.querySelectorAll('h1, h2, caption');
     titles.forEach(title => {
         const text = title.textContent;
         typeWriter(title, text, 30); // 30ms par caractère pour un effet fluide
