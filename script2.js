@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     titles.forEach(title => {
         const text = title.textContent;
-        typeWriter(title, text);
+        typeWriter(title, text,30);
     });
 
 });
